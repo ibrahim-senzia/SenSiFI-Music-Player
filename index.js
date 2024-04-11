@@ -63,4 +63,59 @@ volumeSlider.addEventListener('input', (event) => {
   audioPlayer.volume = event.target.value;
 });
 
-createPlaylistButton.addEventListener('click',)
+class Playlist {
+  constructor(name) {
+    this.name = name;
+    this.songs = [];
+  }
+
+  addSong(song) {
+    this.songs.push(song);
+  }
+
+  removeSong(song) {
+    const index = this.songs.indexOf(song);
+    if (index > -1) {
+      this.songs.splice(index, 1);
+    }
+  }
+}
+
+//Modify the createPlaylistButton while click event listener it create a new Playlist object and add it to the playlists array:
+createPlaylistButton.addEventListener('click', () => {
+  const playlistName = playlistInput.value;
+  const playlist = new Playlist(playlistName);
+  playlists.push(playlist);
+  playlistInput.value = '';
+  savePlaylistButton.disabled = false;
+  loadPlaylistButton.disabled = false;
+  playlistSelector.disabled = false;
+  playlistSelector.innerHTML = '';
+  playlists.forEach((playlist) => {
+    const option = document.createElement('option');
+    option.value = playlist.name;
+    option.textContent = playlist.name;
+    playlistSelector.add(option);
+  });
+});
+
+
+//Modifying the savePlaylistButton  while you click, an event listener is processed to save the current playlist:
+savePlaylistButton.addEventListener('click', () => {
+  const selectedPlaylist = playlistSelector.value;
+  const playlist = playlists.find((playlist) => playlist.name === selectedPlaylist);
+  if (playlist) {
+    playlist.songs = songs.slice();
+    alert('Playlist saved!');
+  }
+});
+
+//Modifying the loadPlaylistButton while clicking event listener loads a saved playlist:
+loadPlaylistButton.addEventListener('click', () => {
+  const selectedPlaylist = playlistSelector.value;
+  const playlist = playlists.find((playlist) => playlist.name === selectedPlaylist);
+  if (playlist) {
+    songs = playlist.songs.slice();
+    alert('Playlist loaded!');
+  }
+});
