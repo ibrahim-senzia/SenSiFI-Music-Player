@@ -24,7 +24,7 @@ To leave a comment, simply enter your comment in the provided text box and click
 SenSiFI Music Player is released under the MIT License. See the LICENSE file for details.
 
 ## Contact
-If you have any questions or comments about SenSiFI Music Player, please don't hesitate to contact us at contact@yoursite.com.
+If you have any questions or comments about SenSiFI Music Player, please don't hesitate to contact us at contacthttps://www.instagram.com/sen.chronicles/
 
 
 
