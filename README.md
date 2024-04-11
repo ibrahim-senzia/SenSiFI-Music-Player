@@ -7,7 +7,7 @@ Create, save, and load playlists
 Control volume
 Leave comments
 
-#Getting Started With THe Music Player
+#Getting Started With The Music Player
 To get started with SenSiFI Music Player, simply download and extract the files to your local machine. Then, open the index.html file in your preferred web browser.
 
 ##Usage
